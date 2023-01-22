@@ -1,0 +1,73 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+    .rotateimg {
+  -webkit-transform:rotate({{Degree}}deg);
+  -moz-transform: rotate({{Degree}}deg);
+  -ms-transform: rotate({{Degree}}deg);
+  -o-transform: rotate({{Degree}}deg);
+  transform: rotate({{Degree}}deg);
+  transform-origin: right bottom;
+}
+    </style>
+
+    {% comment %} <script>
+    var id = 'stick';//The ID of the <img> element you want to rotate
+    var deg = {{Degree}};//The rotation angle, in degrees
+    document.getElementById(id).style = 'transform: rotate(' + deg + 'deg)';
+    </script> {% endcomment %}
+
+    <title>COVID-19 Probability Detector</title>
+  </head>
+  <body style="background-image: url({% static 'coronavirus.png' %}); background-repeat: no-repeat; background-position-x:0px; background-position-y: 30px; background-size: auto">
+    <nav class="navbar navbar-light" style="background-color: #1F618D;">
+  <a class="navbar-brand" style="color: white">Let's Fight Corona Together</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="color: white">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<button type="submit" class="btn btn-warning btn-lg" style="margin-top: 20px; margin-left: 20px" onClick="javascript:history.go(-1)">Go Back</button>
+
+<div class="container">
+<p align="justify" style="font-size: 30px; margin-left: 25px; margin-top:30px; font-weight: bold;">Patient's probability of being corona positive is {{InfProb}} %</p>
+
+<img src="{%static 'alert_meter.png'%}" alt="alert meter" style="width:537px;height:317px; position: absolute; left: 750px; top: 200px" >
+<img class="rotateimg" id="stick" src="{%static 'alert_stick.png'%}" alt="alert stick" style="width:197px;height:35px; position: absolute; left: 822px; top: 450px" >
+
+
+<p align="right" style="font-size: 20px; margin-left: 25px; margin-top:370px;">Thanks for using COVID-19 Probability Detector.</p>
+<p align="right" style="font-size: 20px; margin-left: 25px; margin-top:10px;">Stay happy, Stay safe, Stay home.</p>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

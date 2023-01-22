@@ -1,0 +1,101 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <title>COVID-19 Probability Detector</title>
+  </head>
+  <body style="background-image: url({% static 'coronavirus.jpg' %}); background-repeat: no-repeat; background-position-x:center; background-position-y: center; background-size:cover;">
+    <nav class="navbar navbar-light" style="background-color: #1F618D;">
+  <a class="navbar-brand" style="color: white">Let's Fight Corona Together</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="color: white">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<p align="center" style="font-size: 40px; margin: 15px; color: white"> COVID-19 Probability Detector </p>
+
+<div style="margin-left: 225px; margin-right: 225px">
+<form method='post' action='/result'> {% csrf_token %}
+  <div class="form-group">
+    <label for="Age" style="color: white; font-size: 20px">Age (in years)</label>
+    <input class="form-control" type="number" id="exampleInputEmail1" name="Age" Required>
+  </div>
+  <div class="form-group">
+    <label for="BodyTemp." style="color: white; font-size: 20px">Body temperature (in &#176;F)</label>
+    <input class="form-control" id="exampleInputEmail1" name="BodyTemp." Required>
+  </div>
+  <div class="form-group">
+    <label for="Fatigue" style="color: white; font-size: 20px">Fatigue</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="Fatigue" Required>
+      <option value="">None</option>
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Cough" style="color: white; font-size: 20px">Cough</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="Cough" Required>
+      <option value="">None</option>
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="BodyPain" style="color: white; font-size: 20px">Body pain</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="BodyPain" Required>
+      <option value="">None</option>
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="SoreThroat" style="color: white; font-size: 20px">Sore throat</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="SoreThroat" Required>
+      <option value="">None</option>
+      <option value="0">Not at all</option>
+      <option value="1">Little bit</option>
+      <option value="2">Too much</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="BreathingDifficulty" style="color: white; font-size: 20px">Difficulty in breathing</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="BreathingDifficulty" Required>
+      <option value="">None</option>
+      <option value="0">Not at all</option>
+      <option value="1">Little bit</option>
+      <option value="2">Too much</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-outline-light" style="margin-bottom: 20px; margin-top: 20px; float: right">Submit</button>
+</form>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
